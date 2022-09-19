@@ -35,4 +35,15 @@ public class ProductController {
     public void removeProduct(@PathVariable String productId){
         productService.removeProduct(productId);
     }
+
+    @PutMapping("/update")
+    public Product updateProduct(@RequestBody CreateProductRequest request){
+        Product updatedProduct = productService.updateProduct(request);
+        return updatedProduct;
+    }
+
+    @GetMapping("/find/category/{categoryName}")
+    public Collection<Product> fetchProductByCategory(@PathVariable("categoryName") String categoryName){
+        return productService.fetchProductByCategory(categoryName);
+    }
 }

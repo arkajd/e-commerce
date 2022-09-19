@@ -2,17 +2,25 @@ package com.ecommerce.dukaan.model;
 
 import com.ecommerce.dukaan.enums.Category;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Product {
 
-    String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Integer id;
     String name;
     Category category;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

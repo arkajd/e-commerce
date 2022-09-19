@@ -14,4 +14,8 @@ public interface ProductService {
     Product findProduct(String id);
 
     void removeProduct(String id);
+
+    Product updateProduct(CreateProductRequest request);
+
+    Collection<Product> fetchProductByCategory(String categoryName);
 }
